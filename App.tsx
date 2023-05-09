@@ -10,7 +10,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Início" component={Home} />
+        <Stack.Screen name="Pokedex" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );
