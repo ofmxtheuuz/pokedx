@@ -3,7 +3,7 @@ import axios from "axios";
 
 class PokeAPI {
   private readonly BASE_URL: string = "https://pokeapi.co/api/v2/pokemon"
-  public POKEMONS_LIMIT: number = 30
+  public POKEMONS_LIMIT: number = 51
 
   async getAll() {
     return ((await axios(this.BASE_URL + "?limit=" + this.POKEMONS_LIMIT)).data).results
