@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import api from "../api";
 import types from "../types";
 
-export default function PokemonMinified({pokemon}: any) {
+export default function PokemonMinified({pokemon, id}: any) {
 
   try {
     
@@ -23,7 +23,7 @@ export default function PokemonMinified({pokemon}: any) {
       <View style={[s.box, {borderColor: color}]}>
         <Image style={s.image} source={{ uri:image }} />
         <Text style={[s.text, {color}]}>
-          {name[0].toUpperCase() + name.substring(1)}
+          {name[0].toUpperCase() + name.substring(1) + " #" + id} 
         </Text>
         <View style={s.abilities}>
           <Text style={[{color}]}>Weight: {weight}kg</Text>

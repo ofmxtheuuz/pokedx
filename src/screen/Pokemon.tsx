@@ -27,7 +27,6 @@ export default function Pokemon({ navigation, route }: any) {
     const name: string = pokemon.name;
     const type: string = pokemon.types[0].type.name;
     const pokemonTypes: any = pokemon.types;
-    console.log(pokemonTypes);
 
     const images: string[] = [
       pokemon.sprites.other.home.front_default,
@@ -54,9 +53,9 @@ export default function Pokemon({ navigation, route }: any) {
           </Text>
 
           <View style={s.infs}>
-            {pokemonTypes.map((e: any) => {
+            {pokemonTypes.map((e: any, i: number) => {
               return (
-                <Text style={[{ backgroundColor: types[e.type.name] }, s.type]}>
+                <Text key={i} style={[{ backgroundColor: types[e.type.name] }, s.type]}>
                   {e.type.name[0].toUpperCase() + e.type.name.substring(1)}
                 </Text>
               );
@@ -70,7 +69,6 @@ export default function Pokemon({ navigation, route }: any) {
       </ScrollView>
     );
   } catch (e) {
-    console.log("Error: " + e);
     return <Text></Text>;
   }
 }

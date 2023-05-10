@@ -22,9 +22,9 @@ export default function Home({navigation}: any) {
     <ScrollView>
       <TextInput onChangeText={search} style={s.input} placeholder="Pesquisar"/>
       <View style={s.pokemons}>
-        {pokemons.map((e: any) => (
-          <TouchableOpacity key={e.name} onPress={() => navigation.push("Pokemon", {name: e.name})}>
-            <PokemonMinified pokemon={e} />
+        {pokemons.map((e: any, index: number) => (
+          <TouchableOpacity key={index} onPress={() => navigation.push("Pokemon", {name: e.name})}>
+            <PokemonMinified pokemon={e} id={index + 1} />
           </TouchableOpacity>
         ))}
       </View>
