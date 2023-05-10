@@ -13,7 +13,7 @@ export default function Home({navigation}: any) {
     <ScrollView>
       <View style={s.pokemons}>
         {pokemons.map((e: any) => (
-          <TouchableOpacity onPress={() => navigation.push("Pokemon", {name: e.name})}>
+          <TouchableOpacity key={e.name} onPress={() => navigation.push("Pokemon", {name: e.name})}>
             <PokemonMinified pokemon={e} />
           </TouchableOpacity>
         ))}
